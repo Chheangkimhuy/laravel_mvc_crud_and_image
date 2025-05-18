@@ -23,7 +23,6 @@ class PostController extends Controller
 
     public function submitPost(Request $request)
     {
-        // Validate input (recommended)
         $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
@@ -51,34 +50,7 @@ class PostController extends Controller
     }
 
 
-    // public function updatePost(Request $request, $id)
-    // {
-
-    //     $request->validate([
-    //         'titl'        =>'required|string|max:255',
-    //         'description' =>'required|string',
-    //         'image'       =>'nullable|image|mimies:jpeg,png,jpg,gif|max:2048',
-    //     ]);
-
-    //     $post = DB::table('posts')->where('id', $id)->first();
-
-    //     $image_name = $post->image;
-
-    //     if($request->hasFile('image')){
-    //         $image ->$request->file('image');
-    //         $image_name = time() ."_". $image->getClientOriginalName();
-
-    //     }
-    //     DB::table('posts')
-    //         ->where('id', $id)
-    //         ->update([
-    //             'title' => $request->title,
-    //             'description' => $request->description,
-    //             'image' => $request->image,
-    //         ]);
-
-    //     return redirect('/')->with('success', 'Post updated successfully');
-    // }
+    
     public function updatePost(Request $request, $id)
     {
         $request->validate([
